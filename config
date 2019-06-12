@@ -115,15 +115,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Specify default workspaces for applications
-assign [class="(?i)konsole"] $ws1
-assign [class="(?i)dolphin"] $ws2
-assign [class="(?i)firefox"] $ws6
-assign [class="(?i)kmail"] $ws7
-
-exec konsole
-exec dolphin
-exec firefox
-exec kmail
+exec --no-startup-id i3-msg 'workspace $ws1; exec konsole; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws2; exec dolphin; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws6; exec firefox; workspace $ws1'
+exec --no-startup-id i3-msg 'workspace $ws7; exec kmail;   workspace $ws1'
 exec nextcloud
 
 
